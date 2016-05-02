@@ -27,7 +27,6 @@ fastclick
 raix:handlebar-helpers
 aldeed:collection2
 aldeed:autoform
-accounts-ui
 accounts-password
 matb33:bootstrap-glyphicons
 zimme:active-route
@@ -37,3 +36,5 @@ datariot:ganalytics
 
 check
 session
+ian:accounts-ui-bootstrap-3
+twbs:bootstrap
