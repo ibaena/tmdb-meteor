@@ -7,20 +7,16 @@ import {
 
 Template.SingleMovie.onCreated(function() {
   var SingleMovieId = FlowRouter.getParam('id');
-  Meteor.call("SingleMovie", {param:SingleMovieId}, function(err, res) {
+
+  Meteor.call("getSingleMovie", {query: SingleMovieId}, function(err, res) {
     Session.set('SingleMovie', res);
-    console.log(SingleMovieId);
+    console.log(res);
   });
 });
 
 Template.SingleMovie.helpers({
   Movies: function() {
-    return Session.get('newMovies').map(function(Movies, index) {
-      if (index === 0)
-        Movies.isFirst = true;
-
-      return Movies;
-    });
+    return Session.get('SingleMovie');
 
   }
 });
