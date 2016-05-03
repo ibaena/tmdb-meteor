@@ -5,22 +5,22 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.SingleMovie.onCreated(function() {
+Template.SingleMovieHeader.onCreated(function() {
   var SingleMovieId = FlowRouter.getParam('id');
 
   Meteor.call("getSingleMovie", {query: SingleMovieId}, function(err, res) {
-    Session.set('SingleMovie', res);
-    console.log(res);
+    Session.set('SingleMovie', res.data);
+    console.log(res.data);
   });
 });
 
-Template.SingleMovie.helpers({
-  Movies: function() {
+Template.SingleMovieHeader.helpers({
+  SingleMovie: function() {
     return Session.get('SingleMovie');
 
   }
 });
 
-Template.SingleMovie.events({
+Template.SingleMovieHeader.events({
 
 });

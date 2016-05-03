@@ -1,0 +1,19 @@
+<template name="SingleMovieHeader">
+  <div class="container">
+    <div class="jumbotron singleHeader" style="background-image: url(https://image.tmdb.org/t/p/w500/{{SingleMovie.backdrop_path}})">
+    </div>
+    <div class="col-lg-9">
+      <div class="media">
+        <div class="media-left">
+            <img class="media-object boxArt" src="https://image.tmdb.org/t/p/w500/{{SingleMovie.poster_path}})" alt="{{SingleMovie.title}}">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{SingleMovie.title}}</h4>
+          <p class="cardReview">
+            {{SingleMovie.overview}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
