@@ -5,14 +5,15 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.Header.onCreated(function() {
-  Meteor.call("getNewMovies", function(err, res) {
-    Session.set('newMovies', res.data.results);
-    console.log(res);
+Template.SingleMovie.onCreated(function() {
+  var SingleMovieId = FlowRouter.getParam('id');
+  Meteor.call("SingleMovie", {param:SingleMovieId}, function(err, res) {
+    Session.set('SingleMovie', res);
+    console.log(SingleMovieId);
   });
 });
 
-Template.Header.helpers({
+Template.SingleMovie.helpers({
   Movies: function() {
     return Session.get('newMovies').map(function(Movies, index) {
       if (index === 0)
@@ -20,11 +21,10 @@ Template.Header.helpers({
 
       return Movies;
     });
+
   }
 });
 
-Template.Header.events({
-'click .headerSlider-link': () => {
-  console.log('hello');
-}
+Template.SingleMovie.events({
+
 });

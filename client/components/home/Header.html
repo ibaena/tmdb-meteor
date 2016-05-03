@@ -13,20 +13,27 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         {{#each Movies}} {{#if isFirst}}
+
         <div class="item active ">
-          <img class="headerSlider" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+          <a href="/movie/{{title}}/{{id}}" class="headerSlider-link">
+            <img class="headerSlider" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+          </a>
           <div class="carousel-caption">
             <h3>{{title}}</h3>
           </div>
         </div>
         {{else}}
+
         <div class="item ">
-          <img class="headerSlider" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+          <a href="movie/{{title}}/{{id}}" class="headerSlider-link">
+            <img class="headerSlider" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+          </a>
           <div class="carousel-caption">
             <h3>{{title}}</h3>
           </div>
         </div>
-        {{/if}} {{/each}}
+        {{/if}}
+        {{/each}}
       </div>
 
       <!-- Controls -->
