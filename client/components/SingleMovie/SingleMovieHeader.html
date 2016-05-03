@@ -8,10 +8,30 @@
             <img class="media-object boxArt" src="https://image.tmdb.org/t/p/w500/{{SingleMovie.poster_path}})" alt="{{SingleMovie.title}}">
         </div>
         <div class="media-body">
-          <h4 class="media-heading">{{SingleMovie.title}}</h4>
+          <h4 class="media-heading">{{SingleMovie.title}} - <small><a href="{{SingleMovie.homepage}}">Visit Website</a></small></h4>
+          <h5 class="tagline">"{{SingleMovie.tagline}}"</h5>
           <p class="cardReview">
             {{SingleMovie.overview}}
           </p>
+          <ul>
+            <li class="list"><span class="subtitle"> Genres: </span><span class="items">{{#each SingleMovie.genres}} {{name}}, {{/each}}</span></li>
+            <li class="list"><span class="subtitle"> Runtime: </span><span class="items">{{SingleMovie.runtime}} minutes</span></li>
+            <li class="list"><span class="subtitle"> Studio: </span><span class="items">{{#each SingleMovie.production_companies}} {{name}}, {{/each}}</span></li>
+            <li class="list"><span class="subtitle"> Language: </span><span class="items">{{#each SingleMovie.spoken_languages}} {{iso_639_1}}, {{/each}}</span></li>
+            <li class="list"><span class="subtitle"> Country: </span><span class="items">{{#each SingleMovie.production_countries}} {{iso_3166_1}}, {{/each}}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="media">
+        <div class="media-right">
+          <ul>
+            <li class="list"><span class="subtitle"> Rating: </span><span class="items">{{SingleMovie.vote_average}}</span></li>
+            <li class="list"><span class="subtitle"> Popularity: </span><span class="items">{{SingleMovie.popularity}}</span></li>
+            <li class="list"><span class="subtitle"> Votes: </span><span class="items">{{SingleMovie.vote_count}},000</span></li>
+            <li class="list"><span class="subtitle"> Release: </span><span class="items">{{SingleMovie.release_date}}</span></li>
+          </ul>
         </div>
       </div>
     </div>
