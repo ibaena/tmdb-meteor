@@ -112,6 +112,7 @@ spiderable@1.0.13
 srp@1.0.8
 standard-minifier-css@1.0.6
 standard-minifier-js@1.0.6
+stevezhu:lodash@4.11.1
 stolinski:stylus-multi@1.4.3
 stylus@2.511.5
 templating@1.1.9

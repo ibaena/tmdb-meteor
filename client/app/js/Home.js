@@ -9,7 +9,7 @@ import {
 
 Template.Header.onCreated(function() {
   Meteor.call("getNewMovies", function(err, res) {
-    Session.set('newMovies', res.data);
+    Session.set('newMovies', res.data.results);
     console.log(res);
   });
 });
@@ -19,7 +19,12 @@ Template.Header.onCreated(function() {
 
 Template.Header.helpers({
   Movies: function() {
-    return Session.get('newMovies');
+    return Session.get('newMovies').map(function(Movies, index) {
+      if (index === 0)
+        Movies.isFirst = true;
+
+      return Movies;
+    });
 
   }
 });
