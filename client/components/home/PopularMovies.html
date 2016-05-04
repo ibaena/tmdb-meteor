@@ -1,4 +1,4 @@
-<template name="LatestMovies">
+<template name="PopularMovies">
 
   <div class="container-fluid">
     <div class="row">
@@ -9,7 +9,7 @@
           <ul>
           {{#each popularMovies}}
             <li class="list-temp col-md-2">
-              <a href="/movie/{{title}}/{{id}}" data-container="body" data-toggle="popover" data-placement="bottom"  data-content="{{overview}}" data-title="{{title}}">
+              <a href="/movie/{{title}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom"  data-content="{{overview}}" data-title="{{title}}">
                 <img src="https://image.tmdb.org/t/p/w500/{{poster_path}})" alt="" class="coverArt">
               </a>
             </li>

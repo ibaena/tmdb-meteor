@@ -5,8 +5,8 @@
     }
   },
   "private":{
-    "apiKey":{
-      "key":"Secret"
+    "tmdbapi":{
+      "key":"?api_key=3729ffa22dfa780e9abb43dee3074695"
     }
   }
 }

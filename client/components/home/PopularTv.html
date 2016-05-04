@@ -1,0 +1,21 @@
+<template name="PopularTv">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Card Projects -->
+      <div class="col-md-12">
+        <div class="cardComponent">
+          <p class="subtitle-right">Popular Television <a href="" class="pull-right subtitle"> View More >> </a></p>
+          <ul>
+            {{#each popularTv}}
+            <li class="list-temp col-md-2">
+              <a href="/movie/{{name}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom" data-content="{{overview}}" data-title="{{name}}">
+                <img src="https://image.tmdb.org/t/p/w500/{{poster_path}})" alt="" class="coverArt">
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

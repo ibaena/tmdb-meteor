@@ -5,7 +5,7 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.LatestMovies.onRendered(function() {
+Template.PopularMovies.onRendered(function() {
   Meteor.call("popularMovies", function(err, res) {
     Session.set('popularMovies', res.data);
     Session.set('popularMovies', res.data.results);
@@ -13,15 +13,14 @@ Template.LatestMovies.onRendered(function() {
   });
 });
 
-
-Template.LatestMovies.helpers({
+Template.PopularMovies.helpers({
   popularMovies: function() {
     return Session.get('popularMovies').slice(0,12);
   },
 
 });
 
-Template.LatestMovies.events({
+Template.PopularMovies.events({
   "mouseover .list-temp": function(event, template){
     $('[data-toggle="popover"]').popover({ trigger: "hover"});
 
