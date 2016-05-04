@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
   // code to run on server at startup
-});
+
 
 //Now playing URL
 var tmdbKey = '?api_key=3729ffa22dfa780e9abb43dee3074695';
@@ -36,4 +36,7 @@ Meteor.methods({
         return HTTP.get(latestMoviesURL+limit, {
         });
     },
+});
+
+
 });

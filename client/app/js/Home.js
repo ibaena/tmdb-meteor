@@ -5,7 +5,7 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.Header.onCreated(function() {
+Template.Header.onRendered(function() {
   Meteor.call("getNewMovies", function(err, res) {
     Session.set('newMovies', res.data.results);
   });
