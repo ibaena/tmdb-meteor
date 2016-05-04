@@ -16,7 +16,7 @@ Template.LatestMovies.onCreated(function() {
 
 Template.LatestMovies.helpers({
   popularMovies: function() {
-    return Session.get('popularMovies').slice(0,6);
+    return Session.get('popularMovies').slice(0,12);
   },
 
 });

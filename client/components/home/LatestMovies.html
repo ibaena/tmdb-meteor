@@ -1,20 +1,22 @@
 <template name="LatestMovies">
+
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12">
-        <ul>
+      <!-- Card Projects -->
+      <div class="col-md-12">
+        <div class="cardComponent">
+          <p class="subtitle-right">Popular Movies</p>
+          <ul>
           {{#each popularMovies}}
-          <li class="list col-lg-2">
-            <a href="/movie/{{title}}/{{id}}">
-            <img src="https://image.tmdb.org/t/p/w500/{{poster_path}})" alt="" class="boxArt">
-            </a>
-          </li>
-          {{/each}}
-
-        </ul>
+            <li class="list col-md-2">
+              <a href="/movie/{{title}}/{{id}}">
+                <img src="https://image.tmdb.org/t/p/w500/{{poster_path}})" alt="" class="coverArt">
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
       </div>
     </div>
-
-
   </div>
 </template>
