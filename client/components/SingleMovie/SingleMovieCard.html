@@ -1,0 +1,48 @@
+<template name="SingleMovieCard">
+  <div class="container">
+
+          {{> TrailerCarousel}}
+
+
+
+  </div>
+  <div class="container">
+    <div class="row shadow box effect5">
+      <div class="col-lg-9">
+        <div class="media">
+          <div class="media-left">
+            <img class="media-object boxArt" src="https://image.tmdb.org/t/p/w500/{{SingleMovie.poster_path}})" alt="{{SingleMovie.title}}">
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">{{SingleMovie.title}} <small>{{SingleMovie.tagline}}</small></h4>
+            <h5 class="tagline"><a href="{{SingleMovie.homepage}}">Visit Website</a></h5>
+            <p class="cardReview">
+              {{SingleMovie.overview}}
+            </p>
+            <ul>
+              <li class="list"><span class="subtitle"> Genres: </span><span class="items">{{#each SingleMovie.genres}} {{name}}, {{/each}}</span></li>
+              <li class="list"><span class="subtitle"> Runtime: </span><span class="items">{{SingleMovie.runtime}} minutes</span></li>
+              <li class="list"><span class="subtitle"> Studio: </span><span class="items">{{#each SingleMovie.production_companies}} {{name}}, {{/each}}</span></li>
+              <li class="list"><span class="subtitle"> Language: </span><span class="items">{{#each SingleMovie.spoken_languages}} {{iso_639_1}}, {{/each}}</span></li>
+              <li class="list"><span class="subtitle"> Country: </span><span class="items">{{#each SingleMovie.production_countries}} {{iso_3166_1}}, {{/each}}</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="media">
+          <div class="media-right">
+            <ul>
+              <li class="list"><span class="subtitle-right"> Rating: </span><span class="items-right">{{SingleMovie.vote_average}}</span></li>
+              <li class="list"><span class="subtitle-right"> Votes: </span><span class="items-right">{{SingleMovie.vote_count}},000</span></li>
+              <li class="list"><span class="subtitle-right"> Popularity: </span><span class="items-right">{{SingleMovie.popularity}}</span></li>
+              <li class="list"><span class="subtitle-right"> Status: </span><span class="items-right">{{SingleMovie.status}}</span></li>
+              <li class="list"><span class="subtitle-right"> Release: </span><span class="items-right">{{SingleMovie.release_date}}</span></li>
+              <li class="list"><buttton class="btn btn-default">Launch Trailer</buttton></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

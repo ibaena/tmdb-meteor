@@ -8,6 +8,7 @@ Meteor.startup(() => {
 var tmdbKey = '?api_key=3729ffa22dfa780e9abb43dee3074695';
 var inTheatreURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=3729ffa22dfa780e9abb43dee3074695";
 var SingleMovieURL = "https://api.themoviedb.org/3/movie/";
+var getMovieTrailer = "https://api.themoviedb.org/3/movie/";
 
 Meteor.methods({
     getNewMovies: function() {
@@ -17,10 +18,15 @@ Meteor.methods({
     },
     getSingleMovie: function(query){
         var movie = query.query;
-        console.log(SingleMovieURL+movie+tmdbKey);
         this.unblock();
         return HTTP.get(SingleMovieURL+movie+tmdbKey, {
 
         });
-    }
+    },
+    getMovieTrailer: function(query) {
+        var movie = query.query;
+        this.unblock();
+        return HTTP.get(getMovieTrailer+movie+'/videos'+tmdbKey, {
+        });
+    },
 });

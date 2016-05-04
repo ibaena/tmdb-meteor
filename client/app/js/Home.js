@@ -25,6 +25,6 @@ Template.Header.helpers({
 
 Template.Header.events({
   'click .headerSlider-link': () => {
-    console.log('hello');
+    
   }
 });
