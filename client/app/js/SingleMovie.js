@@ -10,11 +10,9 @@ Template.SingleMovieCard.onCreated(function() {
 
   Meteor.call("getSingleMovie", {query: SingleMovieId}, function(err, res) {
     Session.set('SingleMovie', res.data);
-    console.log(res.data);
   });
   Meteor.call("getMovieTrailer", {query: SingleMovieId}, function(err, res) {
     Session.set('MovieTrailer', res.data.results);
-    console.log(res.data.results);
   });
 });
 

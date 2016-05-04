@@ -8,7 +8,6 @@ import {
 Template.Header.onCreated(function() {
   Meteor.call("getNewMovies", function(err, res) {
     Session.set('newMovies', res.data.results);
-    console.log(res);
   });
 });
 
@@ -25,6 +24,6 @@ Template.Header.helpers({
 
 Template.Header.events({
   'click .headerSlider-link': () => {
-    
+
   }
 });
