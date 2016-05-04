@@ -3,11 +3,12 @@
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        {{#each Movies}} {{#if isFirst}}
+        <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" class="active"></li>
+          {{else}}
+        <li data-target="#carousel-example-generic" data-slide-to="{{@index}}"></li>
+        {{/if}}
+        {{/each}}
       </ol>
 
       <!-- Wrapper for slides -->
@@ -16,7 +17,7 @@
 
         <div class="item active ">
           <a href="/movie/{{title}}/{{id}}" class="headerSlider-link">
-            <img class="headerSlider" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+            <img class="img-responsiver" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
           </a>
           <div class="carousel-caption">
             <h3>{{title}}</h3>
@@ -26,7 +27,7 @@
 
         <div class="item ">
           <a href="movie/{{title}}/{{id}}" class="headerSlider-link">
-            <img class="headerSlider" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+            <img class="img-responsive" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
           </a>
           <div class="carousel-caption">
             <h3>{{title}}</h3>
