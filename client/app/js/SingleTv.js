@@ -5,7 +5,7 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.SingleTvCard.onRendered(function() {
+Template.SingleTvCard.onCreated(function() {
   var SingleTvId = FlowRouter.getParam('id');
 
   Meteor.call("getSingleTv", {

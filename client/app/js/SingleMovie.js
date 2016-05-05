@@ -5,7 +5,7 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.SingleMovieCard.onRendered(function() {
+Template.SingleMovieCard.onCreated(function() {
   var SingleMovieId = FlowRouter.getParam('id');
 
   Meteor.call("getSingleMovie", {query: SingleMovieId}, function(err, res) {

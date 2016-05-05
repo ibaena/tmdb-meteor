@@ -5,11 +5,10 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.PopularMovies.onRendered(function() {
+Template.PopularMovies.onCreated(function() {
   Meteor.call("popularMovies", function(err, res) {
     Session.set('popularMovies', res.data);
     Session.set('popularMovies', res.data.results);
-    console.log(res.data.results);
   });
 });
 
