@@ -3,9 +3,12 @@
     <div class="col-lg-10 col-lg-offset-1">
       <div id="myCarousel" class="carousel slide">
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-          <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+          {{#each MovieTrailer}} {{#if isFirst}}
+          <li data-target="#myCarousel" data-slide-to="{{@index}}" class="active"></li>
+          {{else}}
+          <li data-target="#myCarousel" data-slide-to="{{@index}}" class=""></li>
+          {{/if}}
+          {{/each}}
         </ol>
         <div class="carousel-inner">
           {{#each MovieTrailer}} {{#if isFirst}}

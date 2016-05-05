@@ -23,6 +23,8 @@ Template.PopularMovies.helpers({
 Template.PopularMovies.events({
   "mouseover .list-temp": function(event, template){
     $('[data-toggle="popover"]').popover({ trigger: "hover"});
-
+  },
+  "click .coverArt": function(event, template){
+    $('[data-toggle="popover"]').popover("hide");
   }
 });
