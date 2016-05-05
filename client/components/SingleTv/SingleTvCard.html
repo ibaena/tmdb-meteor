@@ -1,6 +1,6 @@
 <template name="SingleTvCard">
   <div class="container">
-
+    {{> TvCarousel}}
   </div>
   <div class="container">
     <div class="row shadow box effect5">
@@ -10,17 +10,17 @@
             <img class="media-object boxArt" src="https://image.tmdb.org/t/p/w500/{{SingleTv.poster_path}})" alt="{{SingleTv.title}}">
           </div>
           <div class="media-body">
-            <h4 class="media-heading">{{SingleTv.title}} <small>{{SingleTv.tagline}}</small></h4>
+            <h4 class="media-heading">{{SingleTv.name}} <small></small></h4>
             <h5 class="tagline"><a href="{{SingleTv.homepage}}">Visit Website</a></h5>
             <p class="cardReview">
               {{SingleTv.overview}}
             </p>
             <ul>
               <li class="list"><span class="subtitle"> Genres: </span><span class="items">{{#each SingleTv.genres}} {{name}}, {{/each}}</span></li>
-              <li class="list"><span class="subtitle"> Runtime: </span><span class="items">{{SingleTv.runtime}} minutes</span></li>
+              <li class="list"><span class="subtitle"> Creators: </span><span class="items">{{#each SingleTv.created_by}} {{name}}, {{/each}}</span></li>
+              <li class="list"><span class="subtitle"> Network: </span><span class="items">{{#each SingleTv.networks}} {{name}} {{/each}}</span></li>
               <li class="list"><span class="subtitle"> Studio: </span><span class="items">{{#each SingleTv.production_companies}} {{name}}, {{/each}}</span></li>
-              <li class="list"><span class="subtitle"> Language: </span><span class="items">{{#each SingleTv.spoken_languages}} {{iso_639_1}}, {{/each}}</span></li>
-              <li class="list"><span class="subtitle"> Country: </span><span class="items">{{#each SingleTv.production_countries}} {{iso_3166_1}}, {{/each}}</span></li>
+              <li class="list"><span class="subtitle"> Languages: </span><span class="items">{{SingleTv.languages}}</span></li>
             </ul>
           </div>
         </div>
@@ -31,9 +31,9 @@
             <ul>
               <li class="list"><span class="subtitle-right"> Rating: </span><span class="items-right">{{SingleTv.vote_average}}</span></li>
               <li class="list"><span class="subtitle-right"> Votes: </span><span class="items-right">{{SingleTv.vote_count}},000</span></li>
-              <li class="list"><span class="subtitle-right"> Popularity: </span><span class="items-right">{{SingleTv.popularity}}</span></li>
+              <li class="list"><span class="subtitle-right"> Seasons: </span><span class="items-right">{{SingleTv.seasons.length}}</span></li>
               <li class="list"><span class="subtitle-right"> Status: </span><span class="items-right">{{SingleTv.status}}</span></li>
-              <li class="list"><span class="subtitle-right"> Release: </span><span class="items-right">{{SingleTv.release_date}}</span></li>
+              <li class="list"><span class="subtitle-right"> Last Episode: </span><span class="items-right">{{SingleTv.last_air_date}}</span></li>
               <li class="list">
                 <buttton class="btn btn-default">Launch Trailer</buttton>
               </li>

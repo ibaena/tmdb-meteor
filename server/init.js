@@ -14,6 +14,7 @@ Meteor.startup(() => {
   var getMovieTrailer = "https://api.themoviedb.org/3/movie/";
   var popularMoviesURL = "https://api.themoviedb.org/3/movie/popular?api_key=3729ffa22dfa780e9abb43dee3074695";
   var popularTvURL = "https://api.themoviedb.org/3/tv/popular?api_key=3729ffa22dfa780e9abb43dee3074695";
+  var SingleTvURL = "https://api.themoviedb.org/3/tv/";
 
   Meteor.methods({
     getNewMovies: function() {
@@ -43,6 +44,20 @@ Meteor.startup(() => {
     popularTv: function() {
       this.unblock();
       return HTTP.get(popularTvURL, {
+
+      });
+    },
+    getSingleTv: function(query) {
+      var tv = query.query;
+      this.unblock();
+      return HTTP.get(SingleTvURL+tv+tmdbKey, {
+
+      });
+    },
+    getTvTrailer: function(query) {
+      var tv = query.query;
+      this.unblock();
+      return HTTP.get(SingleTvURL + tv + '/videos' + tmdbKey, {
 
       });
     },

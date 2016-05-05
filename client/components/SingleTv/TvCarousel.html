@@ -1,9 +1,9 @@
-<template name="TrailerCarousel">
+<template name="TvCarousel">
   <div class="container">
     <div class="col-md-10 col-md-offset-1">
       <div id="myCarousel" class="carousel slide">
         <ol class="carousel-indicators">
-          {{#each MovieTrailer}} {{#if isFirst}}
+          {{#each TvTrailer}} {{#if isFirst}}
           <li data-target="#myCarousel" data-slide-to="{{@index}}" class="active"></li>
           {{else}}
           <li data-target="#myCarousel" data-slide-to="{{@index}}" class=""></li>
@@ -11,7 +11,7 @@
           {{/each}}
         </ol>
         <div class="carousel-inner">
-          {{#each MovieTrailer}} {{#if isFirst}}
+          {{#each TvTrailer}} {{#if isFirst}}
           <div class="item active">
             <div class="embed-responsive embed-responsive-16by9 trailer">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{key}}" ></iframe>
