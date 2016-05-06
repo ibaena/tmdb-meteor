@@ -1,0 +1,30 @@
+<template name="ListItems">
+
+  <div class="container-fluid" style="background-image: url(https://image.tmdb.org/t/p/w500/{{poster_path}})">
+    <div class="row">
+      <!-- Card Projects -->
+      <div class="col-md-12">
+        <div class="cardComponent">
+          <ul class="list-group">
+            <li class="list-group-item">
+             <span class="badge">  <span class="glyphicon glyphicon-thumbs-up"></span> {{ListItems.favorite_count}}</span>
+              <p class="movieListsTitle">{{ListItems.name}}<br />
+              <small class="mlsubtitle">{{ListItems.description}}</small>
+            </p>
+            </li>
+          </ul>
+          <ul>
+            {{#each ListItems.items}}
+              <li class="list-temp col-md-2">
+                <a href="/movie/{{title}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom" data-content="{{overview}}" data-title="{{title}}">
+                  <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="" class="coverArt">
+                </a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

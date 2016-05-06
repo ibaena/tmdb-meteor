@@ -30,8 +30,5 @@ Template.SimilarMovies.events({
   },
   "click .coverArt": function(event, template) {
     $('[data-toggle="popover"]').popover("hide");
-    FlowRouter.go('single-movie', {
-      _id: listId
-    });
   }
 });
