@@ -7,16 +7,18 @@
         <div class="cardComponent">
           <ul class="list-group">
             <li class="list-group-item">
-             <span class="badge">  <span class="glyphicon glyphicon-thumbs-up"></span> {{ListItems.favorite_count}}</span>
-              <p class="movieListsTitle">{{ListItems.name}}<br />
-              <small class="mlsubtitle">{{ListItems.description}}</small>
-            </p>
+              <span class="badge">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+                {{ListItem.favorite_count}}</span>
+              <p class="movieListsTitle">{{ListItem.name}}<br/>
+                <small class="mlsubtitle">{{ListItem.description}}</small>
+              </p>
             </li>
           </ul>
           <ul>
-            {{#each ListItems.items}}
+            {{#each ListItems}}
               <li class="list-temp col-md-2">
-                <a href="/movie/{{title}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom" data-content="{{overview}}" data-title="{{title}}">
+                <a href="/movie/{{title}}/{{id}}" onclick="window.location.reload(true)" data-container="body" data-toggle="popover" data-placement="auto bottom" data-content="{{overview}}" data-title="{{title}}">
                   <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="" class="coverArt">
                 </a>
               </li>

@@ -5,21 +5,25 @@ import {
   ReactiveVar
 } from 'meteor/reactive-var';
 
-Template.List.onCreated(function() {
+Template.ListItems.onCreated(function() {
     var ListId = FlowRouter.getParam('id');
 
   Meteor.call("getAllList", {query: ListId}, function(err, res) {
-    Session.set('ListItems', res.data);
-    console.log(res.data);
+    Session.set('ListItem', res.data);
+    Session.set('ListItems', res.data.items);
   });
 
 });
 
 Template.ListItems.helpers({
+  ListItem: function() {
+    return Session.get('ListItem');
+  },
   ListItems: function() {
-    return Session.get('ListItems');
-  }
+    return Session.get('ListItems').slice(0,24);
+  },
 });
+
 
 Template.ListItems.events({
   "mouseover .list-temp": function(event, template) {

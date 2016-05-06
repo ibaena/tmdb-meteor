@@ -1,5 +1,4 @@
 var tmdbKey = '?api_key=3729ffa22dfa780e9abb43dee3074695';
-var limit = '&limit=6';
 var inTheatreURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=3729ffa22dfa780e9abb43dee3074695";
 var SingleMovieURL = "https://api.themoviedb.org/3/movie/";
 var getMovieTrailer = "https://api.themoviedb.org/3/movie/";
@@ -7,7 +6,7 @@ var popularMoviesURL = "https://api.themoviedb.org/3/movie/popular?api_key=3729f
 var popularTvURL = "https://api.themoviedb.org/3/tv/popular?api_key=3729ffa22dfa780e9abb43dee3074695";
 var SingleTvURL = "https://api.themoviedb.org/3/tv/";
 var getListURL = "https://api.themoviedb.org/3/list/";
-
+var getGenreURL = "http://api.themoviedb.org/3/genre/list";
 
 Meteor.methods({
   getNewMovies: function() {
@@ -72,6 +71,12 @@ Meteor.methods({
     var ListId = query.query;
     this.unblock();
     return HTTP.get(getListURL + ListId + tmdbKey, {
+
+    });
+  },
+  getMovieGenre: function() {
+    this.unblock();
+    return HTTP.get(getGenreURL + tmdbKey, {
 
     });
   },
