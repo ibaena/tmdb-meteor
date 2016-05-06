@@ -1,12 +1,12 @@
 <template name="SingleMovieCard">
-  <div class="container">
+
 
           {{> TrailerCarousel}}
 
-  </div>
+
   <div class="container">
     <div class="row shadow box effect5">
-      <div class="col-lg-9">
+      <div class="col-md-9">
         <div class="media">
           <div class="media-left">
             <img class="media-object boxArt" src="https://image.tmdb.org/t/p/w500/{{SingleMovie.poster_path}})" alt="{{SingleMovie.title}}">
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-md-3">
         <div class="media">
           <div class="media-right">
             <ul>
@@ -36,7 +36,7 @@
               <li class="list"><span class="subtitle-right"> Popularity: </span><span class="items-right">{{SingleMovie.popularity}}</span></li>
               <li class="list"><span class="subtitle-right"> Status: </span><span class="items-right">{{SingleMovie.status}}</span></li>
               <li class="list"><span class="subtitle-right"> Release: </span><span class="items-right">{{SingleMovie.release_date}}</span></li>
-              <li class="list"><buttton class="btn btn-default">Launch Trailer</buttton></li>
+              <li class="list">{{> MovieList}}</li>
             </ul>
           </div>
         </div>

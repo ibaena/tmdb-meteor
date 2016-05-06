@@ -1,0 +1,25 @@
+<template name="MovieList">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Lists
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <ul >
+            {{#each MovieList}}
+              <li class="list">
+                <a class="listLinks" href="/list/{{name}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom"  data-content="{{description}}">{{name}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

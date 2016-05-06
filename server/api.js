@@ -60,5 +60,12 @@ Meteor.methods({
 
     });
   },
+  getListMovie: function(query) {
+    var movie = query.query;
+    this.unblock();
+    return HTTP.get(SingleMovieURL + movie + '/lists' + tmdbKey, {
+
+    });
+  },
 
 });
