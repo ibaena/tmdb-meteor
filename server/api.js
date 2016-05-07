@@ -87,4 +87,11 @@ Meteor.methods({
 
     });
   },
+  getSimilarTv: function(query) {
+    var tv = query.query;
+    this.unblock();
+    return HTTP.get(SingleTvURL + tv + '/similar' + tmdbKey, {
+
+    });
+  },
 });
