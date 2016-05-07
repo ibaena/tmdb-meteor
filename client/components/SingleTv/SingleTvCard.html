@@ -1,46 +1,36 @@
 <template name="SingleTvCard">
-
-    {{> TvCarousel}}
-
-  <div class="container">
     <div class="row shadow box effect5">
-      <div class="col-lg-9">
+      <div class="col-lg-9 col-xs-12">
         <div class="media">
-          <div class="media-left">
-            <img class="media-object boxArt" src="https://image.tmdb.org/t/p/w500/{{SingleTv.poster_path}})" alt="{{SingleTv.title}}">
-          </div>
           <div class="media-body">
             <h4 class="media-heading">{{SingleTv.name}} <small></small></h4>
             <h5 class="tagline"><a href="{{SingleTv.homepage}}">Visit Website</a></h5>
             <p class="cardReview">
               {{SingleTv.overview}}
             </p>
-            <ul>
+            <ul class="col-lg-4">
               <li class="list"><span class="subtitle"> Genres: </span><span class="items">{{#each SingleTv.genres}} {{name}}, {{/each}}</span></li>
               <li class="list"><span class="subtitle"> Creators: </span><span class="items">{{#each SingleTv.created_by}} {{name}}, {{/each}}</span></li>
               <li class="list"><span class="subtitle"> Network: </span><span class="items">{{#each SingleTv.networks}} {{name}} {{/each}}</span></li>
               <li class="list"><span class="subtitle"> Studio: </span><span class="items">{{#each SingleTv.production_companies}} {{name}}, {{/each}}</span></li>
               <li class="list"><span class="subtitle"> Languages: </span><span class="items">{{SingleTv.languages}}</span></li>
             </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="media">
-          <div class="media-right">
-            <ul>
-              <li class="list"><span class="subtitle-right"> Rating: </span><span class="items-right">{{SingleTv.vote_average}}</span></li>
-              <li class="list"><span class="subtitle-right"> Votes: </span><span class="items-right">{{SingleTv.vote_count}},000</span></li>
-              <li class="list"><span class="subtitle-right"> Seasons: </span><span class="items-right">{{SingleTv.seasons.length}}</span></li>
-              <li class="list"><span class="subtitle-right"> Status: </span><span class="items-right">{{SingleTv.status}}</span></li>
-              <li class="list"><span class="subtitle-right"> Last Episode: </span><span class="items-right">{{SingleTv.last_air_date}}</span></li>
-              <li class="list">
-                <buttton class="btn btn-default">Launch Trailer</buttton>
-              </li>
+            <ul class="col-lg-4">
+              <li class="list"><span class="subtitle"> Rating: </span><span class="items">{{SingleTv.vote_average}}</span></li>
+              <li class="list"><span class="subtitle"> Votes: </span><span class="items">{{SingleTv.vote_count}},000</span></li>
+              <li class="list"><span class="subtitle"> Seasons: </span><span class="items">{{SingleTv.seasons.length}}</span></li>
+              <li class="list"><span class="subtitle"> Status: </span><span class="items">{{SingleTv.status}}</span></li>
+              <li class="list"><span class="subtitle"> Last Episode: </span><span class="items">{{SingleTv.last_air_date}}</span></li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
+      <div class="col-lg-3 col-xs-12">
+        <div class="media">
+            <img class="media-object img-responsive" src="https://image.tmdb.org/t/p/w500/{{SingleTv.poster_path}})" alt="{{SingleTv.title}}">
+          <br />
+            <buttton class="btn btn-default btn-block">Launch Trailer</buttton>
+        </div>
+      </div>
   </div>
 </template>
