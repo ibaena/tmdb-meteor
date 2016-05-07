@@ -1,12 +1,9 @@
 <template name="SingleMovieCard">
 
-
           {{> TrailerCarousel}}
 
-
-  <div class="container">
     <div class="row shadow box effect5">
-      <div class="col-md-9">
+      <div class="col-lg-9 col-xs-8">
         <div class="media">
           <div class="media-left">
             <img class="media-object boxArt" src="https://image.tmdb.org/t/p/w500/{{SingleMovie.poster_path}})" alt="{{SingleMovie.title}}">
@@ -27,7 +24,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-xs-4">
         <div class="media">
           <div class="media-right">
             <ul>
@@ -42,5 +39,4 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
