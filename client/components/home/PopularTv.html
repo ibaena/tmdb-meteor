@@ -1,6 +1,6 @@
 <template name="PopularTv">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-lg-12">
       <div class="cardComponent">
         <p class="subtitle-right">Popular Television
           <a href="" class="pull-right subtitle">
@@ -9,7 +9,7 @@
         </p>
         <ul>
           {{#each popularTv}}
-            <li class="list-temp col-lg-2 col-xs-4">
+            <li class="list-temp col-lg-2 col-xs-6">
               <a href="/tv/{{name}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom" data-content="{{overview}}" data-title="{{name}}">
                 <img src="https://image.tmdb.org/t/p/w500/{{poster_path}})" alt="" class="coverArt  img-responsive">
               </a>

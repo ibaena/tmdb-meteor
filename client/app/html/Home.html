@@ -1,12 +1,18 @@
 <template name="Home">
-
   <div class="container">
-    {{> Header}}
+    <div class="row">
+      <div class="col-lg-9 col-xs-12">
+        {{> Header}}
+      </div>
+      <div class="col-lg-3 hidden-xs">
+        {{> Upcoming}}
+      </div>
+    </div>
   </div>
+  <br/>
   <div class="container-fluid">
     {{> PopularMovies}}
     <br/>
     {{> PopularTv}}
   </div>
-
 </template>

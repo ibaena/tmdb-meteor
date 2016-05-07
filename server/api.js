@@ -6,6 +6,7 @@ var popularMoviesURL = "https://api.themoviedb.org/3/movie/popular?api_key=3729f
 var popularTvURL = "https://api.themoviedb.org/3/tv/popular?api_key=3729ffa22dfa780e9abb43dee3074695";
 var SingleTvURL = "https://api.themoviedb.org/3/tv/";
 var getListURL = "https://api.themoviedb.org/3/list/";
+var getUpcomingURL = "https://api.themoviedb.org/3/movie/upcoming";
 var getGenreURL = "http://api.themoviedb.org/3/genre/list";
 
 Meteor.methods({
@@ -77,6 +78,12 @@ Meteor.methods({
   getMovieGenre: function() {
     this.unblock();
     return HTTP.get(getGenreURL + tmdbKey, {
+
+    });
+  },
+  getUpcomingMovies: function() {
+    this.unblock();
+    return HTTP.get(getUpcomingURL + tmdbKey, {
 
     });
   },
