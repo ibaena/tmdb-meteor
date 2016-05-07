@@ -8,9 +8,7 @@ import {
 Template.Upcoming.onCreated(function() {
   Meteor.call("getUpcomingMovies", function(err, res) {
     Session.set('upcomingMovies', res.data.results);
-    console.log(res.data.results);
   });
-
 });
 
 Template.Upcoming.helpers({

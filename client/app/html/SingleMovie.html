@@ -1,8 +1,15 @@
 <template name="SingleMovie">
-
   <div class="container">
-
-    {{> SingleMovieCard}}
+    <div class="row">
+      <div class="col-lg-12 col-xs-12" id="movie-trailer">
+        {{>TrailerCarousel}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-xs-12 ">
+        {{> SingleMovieCard}}
+      </div>
+    </div>
   </div>
   <div class="container-fluid">
 

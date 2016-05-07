@@ -8,10 +8,17 @@ import {
 Template.SingleMovieCard.onCreated(function() {
   var SingleMovieId = FlowRouter.getParam('id');
 
-  Meteor.call("getSingleMovie", {query: SingleMovieId}, function(err, res) {
+  Meteor.call("getSingleMovie", {
+    query: SingleMovieId
+  }, function(err, res) {
     Session.set('SingleMovie', res.data);
   });
-  Meteor.call("getMovieTrailer", {query: SingleMovieId}, function(err, res) {
+});
+Template.TrailerCarousel.onCreated(function() {
+  var SingleMovieId = FlowRouter.getParam('id');
+  Meteor.call("getMovieTrailer", {
+    query: SingleMovieId
+  }, function(err, res) {
     Session.set('MovieTrailer', res.data.results);
   });
 });
