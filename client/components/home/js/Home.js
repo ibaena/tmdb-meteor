@@ -14,7 +14,7 @@ Template.Header.onCreated(function() {
 
 Template.Header.helpers({
   Movies: function() {
-    return Session.get('newMovies').map(function(Movies, index) {
+    return Session.get('newMovies').slice(0,10).map(function(Movies, index) {
       if (index === 0)
         Movies.isFirst = true;
 

@@ -1,50 +1,54 @@
 <template name="Header">
-  <div class="container-fluid">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        {{#each Movies}} {{#if isFirst}}
-        <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" class="active"></li>
-          {{else}}
-        <li data-target="#carousel-example-generic" data-slide-to="{{@index}}"></li>
-        {{/if}}
-        {{/each}}
-      </ol>
+  <div class="row">
+    <div class="col-lg-12 col-xs-12">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          {{#each Movies}}
+            {{#if isFirst}}
+              <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" class="active"></li>
+            {{else}}
+              <li data-target="#carousel-example-generic" data-slide-to="{{@index}}"></li>
+            {{/if}}
+          {{/each}}
+        </ol>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        {{#each Movies}} {{#if isFirst}}
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner col-lg-12 col-xs-12">
+          {{#each Movies}}
+            {{#if isFirst}}
 
-        <div class="item active ">
-          <a href="/movie/{{title}}/{{id}}" class="headerSlider-link">
-            <img class="img-responsive" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
-          </a>
-          <div class="carousel-caption">
-            <h3>{{title}}</h3>
-          </div>
+              <div class="item active ">
+                <a href="/movie/{{title}}/{{id}}" class="headerSlider-link">
+                  <img class="img-responsive" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+                </a>
+                <div class="carousel-caption">
+                  <h3>{{title}}</h3>
+                </div>
+              </div>
+            {{else}}
+
+              <div class="item ">
+                <a href="movie/{{title}}/{{id}}" class="headerSlider-link">
+                  <img class="img-responsive" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
+                </a>
+                <div class="carousel-caption">
+                  <h3>{{title}}</h3>
+                </div>
+              </div>
+            {{/if}}
+          {{/each}}
         </div>
-        {{else}}
 
-        <div class="item ">
-          <a href="movie/{{title}}/{{id}}" class="headerSlider-link">
-            <img class="img-responsive" src="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="{{title}}">
-          </a>
-          <div class="carousel-caption">
-            <h3>{{title}}</h3>
-          </div>
-        </div>
-        {{/if}}
-        {{/each}}
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
       </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
+      <!-- Carousel -->
     </div>
-    <!-- Carousel -->
   </div>
 </template>

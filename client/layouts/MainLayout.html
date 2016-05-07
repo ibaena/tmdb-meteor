@@ -1,5 +1,5 @@
 <template name="MainLayout">
-  <div class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">247Movies</a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,15 +26,16 @@
         <!-- here -->
       </ul>
     </div>
-  </div>
+  </nav>
+
   <main>
 
     {{> Template.dynamic template=main}}
 
   </main>
+
   <div id="footer">
-    <div class="container">
-      <p class="footer-block">Place sticky footer content here.</p>
-    </div>
+    <p class="footer-block">Place sticky footer content here.</p>
   </div>
+
 </template>

@@ -1,26 +1,17 @@
 <template name="SearchUI">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2" role="navigation" id="sidebar">
-        <ul class="nav nav-sidebar">
-          {{#each ListGenres}}{{#if isFirst}}
-          <li class="active">
-            <a href="#" >{{name}}</a>
-          </li>
-          {{else}}
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+          <a href="#">
+              Start Bootstrap
+          </a>
+      </li>
+      {{#each ListGenres}}
           <li class="">
             <a href="#">{{name}}</a>
           </li>
-          {{/if}}{{/each}}
-        </ul>
-      </div>
-
-      <div class="col-sm-9 col-md-10 main">
+      {{/each}}
+    </ul>
 
 
-      </div>
-
-    </div>
-  </div>
-  <!--/.container-->
 </template>

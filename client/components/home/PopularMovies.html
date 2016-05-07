@@ -1,21 +1,21 @@
 <template name="PopularMovies">
-
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Card Projects -->
-      <div class="col-md-12">
-        <div class="cardComponent">
-          <p class="subtitle-right">Popular Movies <a href="" class="pull-right subtitle"> View More >> </a></p>
-          <ul>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="cardComponent">
+        <p class="subtitle-right">Popular Movies
+          <a href="" class="pull-right subtitle">
+            View More >>
+          </a>
+        </p>
+        <ul>
           {{#each popularMovies}}
-            <li class="list-temp col-md-2">
-              <a href="/movie/{{title}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom"  data-content="{{overview}}" data-title="{{title}}">
-                <img src="https://image.tmdb.org/t/p/w500/{{poster_path}})" alt="" class="coverArt">
+            <li class="list-temp col-lg-2 col-xs-4">
+              <a href="/movie/{{title}}/{{id}}" data-container="body" data-toggle="popover" data-placement="auto bottom" data-content="{{overview}}" data-title="{{title}}">
+                <img src="https://image.tmdb.org/t/p/w500/{{poster_path}})" alt="" class="coverArt img-responsive	">
               </a>
             </li>
-            {{/each}}
-          </ul>
-        </div>
+          {{/each}}
+        </ul>
       </div>
     </div>
   </div>
