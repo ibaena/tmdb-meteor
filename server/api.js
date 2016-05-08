@@ -43,7 +43,7 @@ Meteor.methods({
   getSingleTv: function(query) {
     var tv = query.query;
     this.unblock();
-    return HTTP.get(SingleTvURL+tv+tmdbKey, {
+    return HTTP.get(SingleTvURL + tv + tmdbKey, {
 
     });
   },
@@ -77,7 +77,7 @@ Meteor.methods({
   },
   getMovieGenre: function() {
     this.unblock();
-    return HTTP.get(getGenreURL + 'movie/list'+ tmdbKey, {
+    return HTTP.get(getGenreURL + 'movie/list' + tmdbKey, {
 
     });
   },
@@ -94,12 +94,17 @@ Meteor.methods({
 
     });
   },
-  getMovieGenres: function(query) {
-    var movie = query.query;
-    console.log(movie);
-    this.unblock();
-    return HTTP.get(getGenreURL + movie + '/movies' + tmdbKey, {
+  getMovieGenres: function(params) {
 
-    });
+    var movie = params.params.movie;
+    if (params.params.page === undefined) {
+      this.unblock();
+      return HTTP.get(getGenreURL + movie + '/movies' + tmdbKey, {});
+    } else {
+      var page = '&page='+params.params.page;
+      this.unblock();
+      return HTTP.get(getGenreURL + movie + '/movies' + tmdbKey + page, {});
+
+    }
   },
 });

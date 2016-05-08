@@ -41,3 +41,4 @@ twbs:bootstrap
 http
 stevezhu:lodash
 underscore
+kurounin:pagination
