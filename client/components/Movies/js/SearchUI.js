@@ -8,7 +8,6 @@ import {
 Template.SearchUI.onCreated(function(){
   Meteor.call("getMovieGenre", function(err, res) {
     Session.set('ListGenres', res.data.genres);
-    console.log(res.data.genres);
   });
 });
 
