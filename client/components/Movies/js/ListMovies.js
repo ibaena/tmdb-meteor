@@ -30,7 +30,14 @@ Template.SortMovieGenre.helpers({
   SortMoviePaginate: function() {
     return Session.get('SortMoviePaginate');
   },
+  Pagination: function (count) {
+    count =[];
+    count.length = 30;
+    for (var i = count; i < count.length; i++) {
+      return count[i];
+    }
 
+  }
 });
 
 Template.SortMovieGenre.events({

@@ -1,6 +1,6 @@
-<template name="SortMovieGenre">
+<template name="SortTvGenre">
   <ul>
-    {{#each SortMovieGenre}}
+    {{#each SortTvGenre}}
     <li class="list-temp col-lg-2 col-xs-6">
       <a href="/movie/{{title}}/{{id}}" onclick="window.location.reload(true)" data-container="body" data-toggle="popover" data-placement="auto bottom" data-content="{{overview}}" data-title="{{title}}">
         <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="" class="coverArt img-responsive">
@@ -9,11 +9,8 @@
     {{/each}}
   </ul>
   <ul class="pagination">
-  {{Pagination}}
-  {{#each SortMovieGenre}}{{#if isFirst}}
-  <li><a href="{{@index}}" onclick="window.location.reload(true)">{{@index}}</a></li>
-  {{/if}}
-  {{/each}}
-</ul>
-
+    {{#each SortTvGenre}}{{#if isFirst}}
+    <li><a href="{{@index}}" onclick="window.location.reload(true)">{{@index}}</a></li>
+    {{/if}} {{/each}}
+  </ul>
 </template>

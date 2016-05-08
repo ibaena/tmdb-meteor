@@ -107,4 +107,10 @@ Meteor.methods({
 
     }
   },
+  getTvGenre: function() {
+    this.unblock();
+    return HTTP.get(getGenreURL + 'tv/list' + tmdbKey, {
+
+    });
+  },
 });
