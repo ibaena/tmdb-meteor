@@ -6,37 +6,38 @@ import {
 } from 'meteor/reactive-var';
 
 Template.SortMovieGenre.onCreated(function() {
-    var movie = FlowRouter.getParam('id');
-    var page = FlowRouter.getParam('page');
+  var movie = FlowRouter.getParam('id');
+  var page = FlowRouter.getParam('page');
 
-  Meteor.call("getMovieGenres", {params:{
-    movie: movie,
-    page: page
-  }}, function(err, res) {
+  Meteor.call("getMovieGenres", {
+    params: {
+      movie: movie,
+      page: page
+    }
+  }, function(err, res) {
     Session.set('SortMovieGenre', res.data.results);
-    Session.set('SortMoviePaginate', res.data);
+    Session.set('SortMoviePaginate', res.data.total_pages);
     console.log(res.data);
   });
 });
 
 Template.SortMovieGenre.helpers({
   SortMovieGenre: function() {
-    return Session.get('SortMovieGenre').slice(0,18).map(function(SortMovieGenre, index) {
-      if (index > 0)
-        SortMovieGenre.isFirst = true;
-          return SortMovieGenre;
-    });
+    return Session.get('SortMovieGenre').slice(0, 18);
   },
   SortMoviePaginate: function() {
     return Session.get('SortMoviePaginate');
   },
-  Pagination: function (count) {
-    count =[];
-    count.length = 30;
-    for (var i = count; i < count.length; i++) {
-      return count[i];
-    }
+  Pagination: function() {
+    var page = Session.get('SortMoviePaginate'); //#
+    var pageArray = [];
+    for (var i = 0; i < page; i++) {
+      pageArray.push(i);
 
+    }
+    return pageArray;
+    Session.set("Pagination", page);
+    Session.get('Pagination');
   }
 });
 

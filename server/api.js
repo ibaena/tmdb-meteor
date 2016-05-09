@@ -9,6 +9,8 @@ var getListURL = "https://api.themoviedb.org/3/list/";
 var getUpcomingURL = "https://api.themoviedb.org/3/movie/upcoming";
 var getGenreURL = "http://api.themoviedb.org/3/genre/";
 
+var discoverMoviesURL = "http://api.themoviedb.org/3/discover";
+
 Meteor.methods({
   getNewMovies: function() {
     this.unblock();
@@ -95,18 +97,13 @@ Meteor.methods({
     });
   },
   getMovieGenres: function(params) {
-
     var movie = params.params.movie;
-    if (params.params.page === undefined) {
+      var page = params.params.page;
       this.unblock();
-      return HTTP.get(getGenreURL + movie + '/movies' + tmdbKey, {});
-    } else {
-      var page = '&page='+params.params.page;
-      this.unblock();
-      return HTTP.get(getGenreURL + movie + '/movies' + tmdbKey + page, {});
+      return HTTP.get(discoverMoviesURL+'/movie'+ tmdbKey +'&with_genres='+ movie +'&page='+page, {});
 
-    }
-  },
+    },
+
   getTvGenre: function() {
     this.unblock();
     return HTTP.get(getGenreURL + 'tv/list' + tmdbKey, {

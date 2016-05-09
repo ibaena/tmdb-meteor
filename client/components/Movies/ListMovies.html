@@ -9,10 +9,10 @@
     {{/each}}
   </ul>
   <ul class="pagination">
-  {{Pagination}}
-  {{#each SortMovieGenre}}{{#if isFirst}}
+
+  {{#each Pagination}}
   <li><a href="{{@index}}" onclick="window.location.reload(true)">{{@index}}</a></li>
-  {{/if}}
+
   {{/each}}
 </ul>
 
