@@ -28,16 +28,17 @@ Template.SortMovieGenre.helpers({
   SortMoviePaginate: function() {
     return Session.get('SortMoviePaginate');
   },
-  Pagination: function() {
+  pageArray: function() {
     var page = Session.get('SortMoviePaginate'); //#
     var pageArray = [];
     for (var i = 0; i < page; i++) {
       pageArray.push(i);
-
     }
-    return pageArray;
-    Session.set("Pagination", page);
-    Session.get('Pagination');
+    return pageArray.slice(0,30).map(function(pageArray, index){
+    if(index === 0)
+    pageArray.isFirst = true;
+        return pageArray;
+    });
   }
 });
 

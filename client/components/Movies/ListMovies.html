@@ -9,11 +9,9 @@
     {{/each}}
   </ul>
   <ul class="pagination">
-
-  {{#each Pagination}}
-  <li><a href="{{@index}}" onclick="window.location.reload(true)">{{@index}}</a></li>
-
-  {{/each}}
-</ul>
+    {{#each pageArray}}
+    <li><a href="{{@index}}" onclick="window.location.reload(true)">{{@index}}</a></li>
+    {{/each}}
+  </ul>
 
 </template>
